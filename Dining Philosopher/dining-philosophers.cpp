@@ -41,7 +41,7 @@ int main()
         philosopher[i] = thread(eat, ref(chp[i]), ref(chp[i-1]), (i+1));
     }
 
-    for(auto &ph: philosopher) {
+    for(auto &ph: philosopher) { // this auto function waits for all phil threads to finish before the program
         ph.join();
     }
 
